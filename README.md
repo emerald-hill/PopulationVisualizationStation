@@ -10,9 +10,9 @@ The goal of this project is to visualize world population data both graphically 
 
 
 #### Ethical considerations made in this project  
-    The dataset used in this project comes from the World Bank, affiliated with the World Bank Group (WBG). WBG is an international organization interested in financially supporting developing nations and reducing poverty globally. 189 national governments work with the World Bank, contributing to policy and spending decisions.  
+The dataset used in this project comes from the World Bank, affiliated with the World Bank Group (WBG). WBG is an international organization interested in financially supporting developing nations and reducing poverty globally. 189 national governments work with the World Bank, contributing to policy and spending decisions.  
 
-    The World Bank's DataBank references Census reports in addition to Eurostat and United Nations reports. The goal of this project is simply to visualize existing data, and as such we have not modified any data points.  
+The World Bank's DataBank references Census reports in addition to Eurostat and United Nations reports. The goal of this project is simply to visualize existing data, and as such we have not modified any data points.  
 
 #### Data Source  
 [World Bank DataBank](https://datacatalog.worldbank.org/public-licenses#cc-by)  
