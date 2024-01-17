@@ -29,7 +29,7 @@ Promise.all([
 
     // Update the GeoJSON data properties with CSV data
     geoJSONData.features.forEach(feature => {
-        let countryCode = feature.properties.ISO_A3;
+        let countryCode = feature.properties.ISO_A3; // ISO_A3 is the 3 character code for country
         let csvCountry = csvDataMap.get(countryCode);
 
         if (csvCountry) {
@@ -38,8 +38,16 @@ Promise.all([
         }
     });
 
-    console.log(geoJSONData);
-    
+    // map population values from geoJSONdata and filter out undefined values
+    let populationValues = geoJSONData.features.map(feature => feature.properties["2022 [YR2022]"]);
+    populationValues = populationValues.filter(value => value !== undefined);
+    let maxPopulation = Math.max(...populationValues);
+    let minPopulation = Math.min(...populationValues);
+    // console.log(populationValues);
+    // console.log(maxPopulation);
+    // console.log(minPopulation);
+    // console.log(geoJSONData);
+
         // make a choropleth data layer
         let choroLayer = L.choropleth(geoJSONData, {
             // choose the property to create the gradients for the choropleth
@@ -72,7 +80,7 @@ Promise.all([
             }
 
         }).addTo(myMap);
-
+ 
         // set up the legend
         let legend = L.control(
             {position: "bottomright"}
@@ -97,8 +105,8 @@ Promise.all([
             // adding the maximum and minimum
             let legendInfo = "<h1>Countries Total Population</h1>" +
             "<div class=\"labels\">" +
-              "<div class=\"min\">" + limits[0] + "</div>" +
-              "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
+              "<div class=\"min\">" + minPopulation+ "</div>" +
+              "<div class=\"max\">" + maxPopulation + "</div>" +
             "</div>";
 
             // to add the legendInfo
@@ -115,7 +123,7 @@ Promise.all([
             return div;
         };
 
-        // add the legend to the map
+         //add the legend to the map
         legend.addTo(myMap);
     }
 );
