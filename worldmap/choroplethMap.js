@@ -39,20 +39,21 @@ Promise.all([
     });
 
     // map population values from geoJSONdata and filter out undefined values
-    let populationValues = geoJSONData.features.map(feature => feature.properties["2022 [YR2022]"]);
+    let populationValues = geoJSONData.features.map(feature => feature.properties[2022]);
     populationValues = populationValues.filter(value => value !== undefined);
+    // variable for max and min population
     let maxPopulation = Math.max(...populationValues);
     let minPopulation = Math.min(...populationValues);
-    // console.log(populationValues);
-    // console.log(maxPopulation);
-    // console.log(minPopulation);
-    // console.log(geoJSONData);
+    console.log(populationValues);
+    console.log(maxPopulation);
+    console.log(minPopulation);
+    console.log(geoJSONData);
 
         // make a choropleth data layer
         let choroLayer = L.choropleth(geoJSONData, {
             // choose the property to create the gradients for the choropleth
                 // "2022 [YR2022]" indicates the population for the year 2022
-            valueProperty: ["2022 [YR2022]"],
+            valueProperty: [2022],
 
             // establish the range of the color scale for the choropleth 
             scale: ["#fee8c8", "#e34a33"],
@@ -76,11 +77,13 @@ Promise.all([
             // then bind the info to the popups for each county in the map
             onEachFeature: function(feature, layer)
             {
-                layer.bindPopup("<b>Country</b>: " + feature.properties.ADMIN + "<hr>" + "<b>Population: </b>" + feature.properties['2022 [YR2022]']);
+                layer.bindPopup("<b>Country</b>: " + feature.properties.ADMIN + "<hr>" + "<b>Population: </b>" + feature.properties[2022]);
             }
 
         }).addTo(myMap);
- 
+        
+        console.log(choroLayer)
+
         // set up the legend
         let legend = L.control(
             {position: "bottomright"}
@@ -105,7 +108,7 @@ Promise.all([
             // adding the maximum and minimum
             let legendInfo = "<h1>Countries Total Population</h1>" +
             "<div class=\"labels\">" +
-              "<div class=\"min\">" + minPopulation+ "</div>" +
+              "<div class=\"min\">" + minPopulation + "</div>" +
               "<div class=\"max\">" + maxPopulation + "</div>" +
             "</div>";
 
