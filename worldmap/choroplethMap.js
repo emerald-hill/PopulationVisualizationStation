@@ -105,7 +105,8 @@ Promise.all([
                 // then bind the info to the popups for each county in the map
             onEachFeature: function(feature, layer)
             {
-                layer.bindPopup("<b>Country</b>: " + feature.properties.ADMIN + "<hr>" + "<b>Population Change Past 10 Years: </b>" + feature.properties['Change']);
+                layer.bindPopup("<b>Country</b>: " + feature.properties.ADMIN + "<hr>" + "<b>Population Change Past 10 Years: </b>" + feature.properties['Change'] + '<br>' +
+                '<b>Percent Change Since 2013: </b>' + ((Number(feature.properties['Change'])) / Number(feature.properties['2013']) * 100).toFixed(2) + '%');
             }
         });
 
@@ -173,7 +174,8 @@ populationChgLegend.onAdd = function(){
     let labels = [];
 
     // adding the maximum and minimum
-    let legendInfo = "<h1>Change Past 10 Years</h1>" +
+    let legendInfo = '<div class="backButton"><a href="../index.html">Back to Home</a></div>' + 
+    "<h1>Change Past 10 Years</h1>" +
     "<div class=\"labels\">" +
       "<div class=\"min\">" + limits[0] + "</div>" +
       "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
