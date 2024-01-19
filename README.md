@@ -5,7 +5,7 @@ The goal of this project is to visualize world population data both graphically 
 
 ### How to use and interact with our pages
 1. The "World Map" page contains an interactable world map showing the population of each country. Clicking a country shows a popup containing more data about the selected country.  
-2. "Country Information" has a searchable list of each country in the dataset and shows a population history chart for each country.  
+2. "Country Information" has an interactive chart that shows a population history chart for each country. The dropdown menu can be used to find information for other countries.
 3. Information about our data sources can be found later in this README, as well as on the "Data Sources" page.  
 
 
