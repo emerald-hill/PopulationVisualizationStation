@@ -1,7 +1,7 @@
 # PopulationVisualizationStation
 
 ### Project Overview
-The goal of this project is to visualize world population data both graphically and geospatially. The data is searchable to find specific countries, and countries on the map can be clicked to show more information. Our dataset comes from the World Bank's DataBank and shows data from 2013 through 2022. 
+The goal of this project is to visualize world population data both graphically and geospatially. Data can be found for individual countries, and the map can be clicked to show more information about specific countries. Our dataset comes from the World Bank's DataBank and shows data from 2013 through 2022.
 
 ### How to use and interact with our pages
 1. The "World Map" page contains an interactable world map showing the population of each country. Clicking a country shows a popup containing more data about the selected country.  
