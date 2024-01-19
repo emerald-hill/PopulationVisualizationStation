@@ -135,7 +135,8 @@ Promise.all([
             let labels = [];
 
             // adding the maximum and minimum
-            let legendInfo = "<h1>Countries Total Population</h1>" +
+            let legendInfo = '<div class="backButton"><a href="../index.html">Back to Home</a></div>' + 
+            "<h1>Countries Total Population</h1>" +
             "<div class=\"labels\">" +
               "<div class=\"min\">" + minPopulation + "</div>" +
               "<div class=\"max\">" + maxPopulation + "</div>" +
