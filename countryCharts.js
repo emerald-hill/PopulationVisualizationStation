@@ -10,23 +10,12 @@ function init() {
     // Fetch the csv data
     d3.csv(csvPath).then((data) => {    
 
-        // array for names 
-        //let names = data[0]["Country Name"];
-
         // name loop
         for(var i=0; i < data.length; i++){
             //console.log(data[i]["Country Name"]),
             dropdown.append("option").text(data[i]["Country Name"]).property("value", data[i]["Country Name"]);
         };
 
-        // console log to check for names selection
-        //console.log(names);
-
-        // Iterate through the names array and append to the dropdown
-        /*names.forEach((name) => {
-            dropdown.append("option").text(name).property("value", name);
-        });
-        */
         // get the first object and assign to variable
         let first = data[0]["Country Name"];
 
@@ -35,7 +24,6 @@ function init() {
         // Call the functions to make each chart
         bar(first);
         countryBar(first);
-        //bubble(first);
         demographics(first);
     });
 }
@@ -58,32 +46,21 @@ function bar(selection) {
         };
         console.log(pop);
 
-        // Filter data where id = selection value
-        //let filteredData = samples.filter((sample) => sample.id === selection);
-
-        // get the first object and assign to variable
-        //let first = filteredData[0];
-        
-        // slice the top 10 values then reverse order to account for default order
-        //slicedValues = pop;
-        //slicedID = country;
-        //slicedLabels = first.otu_labels.slice(0,10).reverse();
-        
-        // log to check value selections
-        //console.log(slicedValues);
-        //console.log(slicedID);
-        //console.log(slicedID);
-
-        // Trace for the data for the horizontal bar chart
+        // Trace 
         let trace = [{
             x: country,
             y: pop,
-            //title: "slicedLabels",
             type: "bar",            
         }];
 
         let layout = {
-            title: {text: "World Population by Country"}
+            title: {text: "<b>World 2022 Population by Country</b>",
+                        font: {family: "helvetica",
+                                size: 30}},
+            xaxis: {tickangle: -45,
+                showticklabels: true,
+                type: 'category'
+            }
         };
             
         // plot bar chart
@@ -174,25 +151,38 @@ function countryBar(selection) {
         
         let tracex = ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"];
         let tracey = [first.y2013, first.y2014, first.y2015, first.y2016, first.y2017, first.y2018, first.y2019, first.y2020, first.y2021, first.y2022];
-        //slicedLabels = first.otu_labels.slice(0,10).reverse();
         
-        // log to check value selections
-        //console.log(slicedValues);
-        //console.log(slicedID);
-        //console.log(slicedID);
-
         // Trace for the data for the horizontal bar chart
         let trace = [{
             x: tracex,
             y: tracey,
-            //title: "slicedLabels",
             type: "bar",            
         }];
 
+        // set layout
         let layout = {
-            title: {text: selection + " Population from 2013 - 2022"},
-            yaxis: {title: "Population"},
-            xaxis: {title: "Year"}
+            title: {
+                text:  `<b>${selection} Population from 2013 - 2022</b>`,
+                font: {
+                    family: "helvetica",
+                    size: 30
+                        }},
+            yaxis: {
+                title: "Population",
+                font: {
+                    family: "helvetica",
+                    size: 30
+            }},
+            xaxis: {
+                title: "Year",
+                font: {
+                    family: "helvetica",
+                    size: 30
+                },
+                tickangle: -45,
+                showticklabels: true,
+                type: 'category',
+            }
 
         };
             
@@ -200,45 +190,7 @@ function countryBar(selection) {
         Plotly.newPlot("countryBar", trace, layout);
     });
 }
-/*
-// function for bubble chart
-function bubble(selection) {
-    // Fetch the JSON data 
-    d3.json(sampleURL).then((data) => {
 
-        // An array of sample objects
-        let samples = data.samples;
-        
-        // Filter data where id = selection value
-        let filteredData = samples.filter((sample) => sample.id === selection);
-        
-        // get the first object and assign to variable
-        let first = filteredData[0];
-
-        console.log(first);
-            
-        // Trace for the data for the bubble chart
-        let trace = [{
-            x: first.otu_ids,
-            y: first.sample_values,
-            text: first.otu_labels,
-            mode: "markers",
-            marker: {
-                size: first.sample_values,
-                color: first.otu_ids,
-                }
-        }];
-        
-        // label x- axis
-        let layout = {
-            xaxis: {title: "OTU ID"}
-        };
-        
-        // plot bubble chart
-        Plotly.newPlot("bubble", trace, layout);
-    });
-}
-*/
 // function for demographics panel
 
 function demographics(selection) {
@@ -288,7 +240,6 @@ function demographics(selection) {
 
 function optionChanged(selection) {
     bar(selection);
-    //bubble(selection);
     countryBar(selection);
     demographics(selection);
 }
