@@ -45,7 +45,6 @@ Promise.all([
     let minPopulation = Math.min(...populationValues);
     var max = maxPopulation.toLocaleString('en-US');
     var min = minPopulation.toLocaleString('en-US');
-    var popFormated = populationValues.toLocaleString("en-US");
     //console.log(populationValues);
     //console.log(maxPopulation);
     //console.log(minPopulation);
