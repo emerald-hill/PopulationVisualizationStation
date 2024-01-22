@@ -5,16 +5,158 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Country Charts</title>
+  <title>Project 3 - Country Information</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="title.css" />
 </head>
 
 <body>
-
   <div class="container">
     <div class="row">
+      <!--div class to hold squaregrid-->
+      <div class = "squaregrid">
+        <!--all the square elements to populate the squaregrid-->
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+        <div class = square></div>
+      </div>
       <div class="col-md-12 jumbotron text-center">
-        <h1>Country Population Visualized</h1></br>
+        <h1>Country Population Visualized</h1>
         <p>Select Country From Dropdown</p>
       </div>
     </div>
@@ -25,32 +167,40 @@
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
         <div class="panel panel-primary">
-          <div class="panel-heading">
+          <div class="panel-heading panel-heading-custom">
             <h3 class="panel-title">Country Information</h3>
           </div>
           <div id="pop-data" class="panel-body"></div>
         </div>
       </div>
       <div class="col-md-9">
-        <div id="countryBar"></div>
+        <canvas id="countryBar"></canvas>
       </div>
-      <div class="col-md-12">
-        <div id="bar"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div id="bubble"></div>
+      <div class="col-md-15">
+        <canvas id="bar"></canvas>
       </div>
     </div>
   </div>
-
+  
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="countryCharts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+
+  <!--script for anime.js animation using the .square elements-->
+  <script>
+    anime({
+  targets: '.square',
+  scale: [
+    {value: .1, easing: 'easeOutSine', duration: 500},
+    {value: 1, easing: 'easeInOutQuad', duration: 1200}
+  ],
+  delay: anime.stagger(200, {grid: [6, 23], from: 'center'})
+});
+  </script>
   
 
 </body>
