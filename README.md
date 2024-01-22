@@ -30,4 +30,12 @@ Accessed under the Creative Commons Attribution license found [here](https://dat
 
 [Chat-GPT code to destroy and replace canvas objects](chat.openai.com)
 
-[countries.geojson](https://datahub.io/core/geo-countries) 
+[countries.geojson](https://datahub.io/core/geo-countries)
+
+[Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+
+[Format Numbers](https://byby.dev/js-format-numbers-commas)
+
+[choropleth color/scale](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)
+
+[Dynamic Choropleth Legend](https://gis.stackexchange.com/questions/219251/dynamic-legend-with-multiple-layers-in-leaflet)
