@@ -43,6 +43,9 @@ Promise.all([
     // variable for max and min population
     let maxPopulation = Math.max(...populationValues);
     let minPopulation = Math.min(...populationValues);
+    var max = maxPopulation.toLocaleString('en-US');
+    var min = minPopulation.toLocaleString('en-US');
+    var popFormated = populationValues.toLocaleString("en-US");
     //console.log(populationValues);
     //console.log(maxPopulation);
     //console.log(minPopulation);
@@ -76,7 +79,7 @@ Promise.all([
             // then bind the info to the popups for each county in the map
             onEachFeature: function(feature, layer)
             {
-                layer.bindPopup("<b>Country</b>: " + feature.properties.ADMIN + "<hr>" + "<b>Population: </b>" + feature.properties[2022]);
+                layer.bindPopup("<b>Country</b>: " + feature.properties.ADMIN + "<hr>" + "<b>Population: </b>" + (Number(feature.properties[2022]).toLocaleString('en-US')));
             }
         });
 
@@ -105,7 +108,7 @@ Promise.all([
                 // then bind the info to the popups for each county in the map
             onEachFeature: function(feature, layer)
             {
-                layer.bindPopup("<b>Country</b>: " + feature.properties.ADMIN + "<hr>" + "<b>Population Change Past 10 Years: </b>" + feature.properties['Change'] + '<br>' +
+                layer.bindPopup("<b>Country</b>: " + feature.properties.ADMIN + "<hr>" + "<b>Population Change Past 10 Years: </b>" + (Number(feature.properties['Change']).toLocaleString('en-US')) + '<br>' +
                 '<b>Percent Change Since 2013: </b>' + ((Number(feature.properties['Change'])) / Number(feature.properties['2013']) * 100).toFixed(2) + '%');
             }
         });
@@ -137,10 +140,10 @@ Promise.all([
 
             // adding the maximum and minimum
             let legendInfo = '<div class="backButton"><a href="../index.html">Back to Home</a></div>' + 
-            "<h1>Countries Total Population</h1>" +
+            "<h1>World Population Distribution</h1>" +
             "<div class=\"labels\">" +
-              "<div class=\"min\">" + minPopulation + "</div>" +
-              "<div class=\"max\">" + maxPopulation + "</div>" +
+              "<div class=\"min\">" + min + "</div>" +
+              "<div class=\"max\">" + max + "</div>" +
             "</div>";
 
             // to add the legendInfo
