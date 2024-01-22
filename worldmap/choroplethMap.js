@@ -80,7 +80,8 @@ Promise.all([
             {
                 layer.bindPopup("<b>Country</b>: " + feature.properties.ADMIN + "<hr>" + "<b>Population: </b>" + (Number(feature.properties[2022]).toLocaleString('en-US')));
             }
-        });
+            //add to myMap to set Default
+        }).addTo(myMap);
 
         console.log(choroLayer)
 
