@@ -1,0 +1,27 @@
+/* create square grid for box animation */
+.squaregrid{
+    width: 50px;
+    height: 50px;
+    margin-top: 70px;
+    display: grid;
+    grid-template: repeat(23, 1fr) / repeat(23, 1fr);
+    grid-gap: 0px;
+    
+}
+/*create square elements for grid*/
+.square {
+    width: 51px;
+    height: 51px;
+    background-color: rgb(134, 194, 243);
+    box-sizing: border-box;
+    border-color: black;
+}
+/* remove jumbotron background */
+.jumbotron {
+    background: none
+}
+/*change color of panel heading*/
+.panel-primary > .panel-heading-custom {
+    background: rgb(134, 194, 243);
+    color: #2e2d2d;
+}
