@@ -29,7 +29,7 @@ Accessed under the Creative Commons Attribution license found [here](https://dat
 
 [Anime.js box animation](https://animejs.com/documentation/)
 
-[Chat-GPT code to destroy and replace canvas objects](chat.openai.com)
+[Chat-GPT code to destroy and replace canvas objects](https://chat.openai.com/)
 
 [countries.geojson](https://datahub.io/core/geo-countries)
 
