@@ -55,7 +55,7 @@ Promise.all([
             valueProperty: [2022],
 
             // establish the range of the color scale for the choropleth 
-            scale: ["#fee8c8", "#e34a33"],
+            scale: ["#fff7fb", "#014636"],
 
             // establish the number of breaks (blocks) in the step range on the scale
             steps: 10,
