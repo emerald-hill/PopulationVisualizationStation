@@ -21,3 +21,7 @@ Accessed under the Creative Commons Attribution license found [here](https://dat
 
 ### References for any code used that is not our own
 [HTML Template](https://html5up.net/phantom)
+[Chart.js bar charts](https://www.chartjs.org/docs/latest/)
+[Chart.js-plugin-zoom zoom and pan functionality](https://www.chartjs.org/chartjs-plugin-zoom/0.7.7/)
+[Anime.js box animation](https://animejs.com/documentation/)
+[Chat-GPT code to destroy and replace canvas objects](chat.openai.com)
