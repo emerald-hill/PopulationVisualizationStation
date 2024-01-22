@@ -180,8 +180,8 @@ populationChgLegend.onAdd = function(){
     let legendInfo = '<div class="backButton"><a href="../index.html">Back to Home</a></div>' + 
     "<h1>Change Past 10 Years</h1>" +
     "<div class=\"labels\">" +
-      "<div class=\"min\">" + limits[0] + "</div>" +
-      "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
+      "<div class=\"min\">" + (Number(limits[0]).toLocaleString('en-US')) + "</div>" +
+      "<div class=\"max\">" + (Number(limits[limits.length - 1]).toLocaleString('en-US')) + "</div>" +
     "</div>";
 
     // to add the legendInfo
